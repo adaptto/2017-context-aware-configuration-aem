@@ -25,7 +25,7 @@ import org.apache.sling.caconfig.annotation.Property;
 /**
  * Nested config annotation class example
  */
-@Configuration(label = "Sample Configuration Nested", description = "This is another sample configuration that is nested.")
+@Configuration(label = "adaptTo() Sample Config Nested", description = "This is another sample configuration that is nested.")
 public @interface ConfigSampleNested {
 
   /**
@@ -39,17 +39,5 @@ public @interface ConfigSampleNested {
    */
   @Property(label = "Sub Config", description = "Nested configuration")
   ConfigSampleSub[] sub();
-
-  /**
-   * @return Sub Config 2
-   */
-  @Property(label = "Sub Config 2", description = "Another nested configuration")
-  ConfigSampleSub2 sub2();
-
-  /**
-   * @return Sub Config 2 as list
-   */
-  @Property(label = "Sub Config 2 List", description = "Another nested configuration as list")
-  ConfigSampleSub2[] sub2List();
 
 }

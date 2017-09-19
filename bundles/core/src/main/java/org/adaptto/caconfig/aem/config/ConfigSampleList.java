@@ -25,7 +25,7 @@ import org.apache.sling.caconfig.annotation.Property;
 /**
  * Config annotation class example
  */
-@Configuration(label = "Sample Configuration List", description = "This is a sample configuration list.", collection = true)
+@Configuration(label = "adaptTo() Sample Config List", description = "This is a sample configuration list.", collection = true)
 public @interface ConfigSampleList {
 
   /**
