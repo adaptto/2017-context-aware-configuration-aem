@@ -33,6 +33,8 @@
   <artifactId>org.adaptto.caconfig-aem.core</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
+  
+  <name>adaptTo() 2017 Context-Aware Configuration in AEM Sample</name>
 
   <dependencies>
 
