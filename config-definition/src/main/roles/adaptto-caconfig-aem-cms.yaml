@@ -1,0 +1,71 @@
+# Adobe Experience Manager (AEM) Instance.
+# AEM quickstart runs directly from command line with embedded Jetty Servlet Container.
+
+inherits:
+- role: aem-cms
+
+variants:
+- variant: aem-author
+- variant: aem-publish
+
+templateDir: adaptto-caconfig-aem-cms
+
+files:
+
+# AEM OSGi System Configuration
+- file: adaptto-caconfig-aem-cms-config.provisioning
+  dir: packages
+  template: adaptto-caconfig-aem-cms-config.provisioning.hbs
+  postProcessors:
+  - aem-contentpackage-osgiconfig
+  postProcessorOptions:
+    contentPackage:
+      name: adaptto-caconfig-aem-cms-config
+      rootPath: /apps/adaptto-caconfig-aem-cms-config/config
+      filters:
+      - filter: /apps/adaptto-caconfig-aem-cms-config
+
+# AEM Systems users with ACLs (Author)
+- file: sample-aem-cms-systemusers.json
+  dir: packages
+  template: sample-aem-cms-systemusers.json.hbs
+  postProcessors:
+  - aem-contentpackage
+  postProcessorOptions:
+    contentPackage:
+      name: sample-aem-cms-author-systemusers
+      acHandling: merge
+      rootPath: /
+      filters:
+      - filter: /content/rep:policy
+      - filter: /conf/rep:policy
+      - filter: /apps/conf/rep:policy
+      - filter: /libs/conf/rep:policy
+      - filter: /home/users/system/sling-caconfig
+
+# Application package
+- url: mvn:org.adaptto.caconfig-aem/org.adaptto.caconfig-aem.complete//zip
+  dir: packages
+
+# Application sample content package
+- url: mvn:org.adaptto.caconfig-aem/org.adaptto.caconfig-aem.sample-content//zip
+  dir: packages
+  condition: ${app.sampleContent}
+
+
+# Defines configuration parameters and default values
+config:
+  contentPackage:
+    group: adaptto-caconfig-aem
+    version: "${version}"
+
+  app:
+    sampleContent: false
+
+
+  # Example for config override configuration
+  #configOverrides:
+  #  "/path/to/config/scope":
+  #    siteUrl:
+  #    siteUrlSecure:
+  #    siteUrlAuthor:
