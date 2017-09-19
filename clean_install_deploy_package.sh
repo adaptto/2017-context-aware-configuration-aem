@@ -69,7 +69,7 @@ echo "*** Deploy AEM packages  ***"
 echo ""
 
 cd config-definition
-mvn -B $sling_params -Pdeploy-packages conga-aem:package-install
+mvn -B $sling_params -Pdeploy-packages -Dconga.nodeDirectory=target/configuration/development/aem-author conga-aem:package-install
 
 if [ "$?" -ne "0" ]; then
   error_exit "*** Deploying config packages FAILED ***"

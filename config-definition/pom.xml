@@ -103,36 +103,7 @@
         </configuration>
       </plugin>
 
-      <!-- do not deploy this sample pom into maven repository -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-
     </plugins>
   </build>
-
-  <profiles>
-
-    <!-- Deploy AEM packages from generated configuration to AEM instance -->
-    <profile>
-      <id>deploy-packages</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>io.wcm.devops.conga.plugins</groupId>
-            <artifactId>conga-aem-maven-plugin</artifactId>
-            <configuration>
-              <nodeDirectory>target/configuration/${config.environment}/aem-author</nodeDirectory>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-  </profiles>
 
 </project>

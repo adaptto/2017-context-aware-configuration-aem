@@ -22,3 +22,4 @@ nodes:
 config:
   contentPackage.group: adaptto-caconfig-aem
   app.sampleContent: true
+  workflow.useMinimalDamUpdateAssetWorkflow: false
