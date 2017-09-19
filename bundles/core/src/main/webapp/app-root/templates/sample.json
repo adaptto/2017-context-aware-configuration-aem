@@ -2,10 +2,10 @@
   "jcr:primaryType": "cq:Template",
   "jcr:title": "Context-Aware Sample Config Test Page",
 
-  "allowedPaths": "^/content/contextaware-config-sample(/.+)?$",
+  "allowedPaths": "^/content/adaptto-caconfig-aem(/.+)?$",
 
   "jcr:content": {
     "jcr:primaryType": "cq:PageContent",
-    "sling:resourceType": "contextaware-config-sample/components/page/sample"
+    "sling:resourceType": "adaptto-caconfig-aem/components/page/sample"
   }
 }

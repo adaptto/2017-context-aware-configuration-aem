@@ -2,7 +2,7 @@
   "jcr:primaryType": "cq:Template",
   "jcr:title": "Context-Aware Sample Config Editor",
 
-  "allowedPaths": "^/content/contextaware-config-sample(/.+)?$",
+  "allowedPaths": "^/content/adaptto-caconfig-aem(/.+)?$",
 
   "jcr:content": {
     "jcr:primaryType": "cq:PageContent",

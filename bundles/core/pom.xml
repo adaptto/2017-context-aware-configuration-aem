@@ -77,7 +77,7 @@
         <configuration>
           <instructions>
             <Sling-Initial-Content>
-              SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/contextaware-config-sample
+              SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/adaptto-caconfig-aem
             </Sling-Initial-Content>
           </instructions>
         </configuration>

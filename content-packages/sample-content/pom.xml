@@ -57,10 +57,10 @@
           <group>${content-package-group}</group>
           <filters>
             <filter>
-              <root>/content/contextaware-config-sample</root>
+              <root>/content/adaptto-caconfig-aem</root>
             </filter>
             <filter>
-              <root>/conf/contextaware-config-sample</root>
+              <root>/conf/adaptto-caconfig-aem</root>
             </filter>
           </filters>
         </configuration>
