@@ -16,7 +16,7 @@ Requirements
 Try it out
 ----------
 
-* Deploy the sample application to your local AEM instance using the script {{clean_install_deploy_package.sh}}
+* Deploy the sample application to your local AEM instance using the script `clean_install_deploy_package.sh`
   * This does a full `mvn clean install` and then uploads the content packages from `config-definition/target/configuration/development/aem-author/packages`
 * Open the sample site at http://localhost:4502/sites.html/content/adaptto-caconfig-aem/en
 * Open Configuration Editor at http://localhost:4502/content/adaptto-caconfig-aem/en/config.html
