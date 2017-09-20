@@ -1,7 +1,5 @@
 /*
  * #%L
- * wcm.io
- * %%
  * Copyright (C) 2017 pro!vision GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
