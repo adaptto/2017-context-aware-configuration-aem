@@ -16,12 +16,6 @@ other_params=$4
 ####
 
 # run modes
-deploy_only()
-{
-    init
-    deploy_artifacts
-}
-
 default_build()
 {
     motd
@@ -93,26 +87,14 @@ error_exit()
 # check params and run
 if [ "$1" != "" ]
 then
-    if [ "$1" = "deploy_only" ]
-    then
-            # commandlineconfig
-            sling_url=$2
-            sling_user=$3
-            sling_password=$4
-            deploy_only
-    else
-            # commandlineconfig
-            sling_url=$1
-            sling_user=$2
-            sling_password=$3
-      shift 3
-      other_params=$@
-            default_build
-    fi
-else
-    default_build
+  # commandlineconfig
+  sling_url=$1
+  sling_user=$2
+  sling_password=$3
+  shift 3
+  other_params=$@
 fi
-
+default_build
 
 echo ""
 echo "*** Build complete ***"
