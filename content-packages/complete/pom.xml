@@ -82,6 +82,11 @@
       <artifactId>io.wcm.caconfig.editor</artifactId>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.caconfig.extensions</artifactId>
+      <scope>compile</scope>
+    </dependency>
 
   </dependencies>
 
