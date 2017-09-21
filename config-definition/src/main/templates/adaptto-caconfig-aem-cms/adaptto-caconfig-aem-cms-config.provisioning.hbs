@@ -13,12 +13,19 @@
   # Example for config override
   org.apache.sling.caconfig.impl.override.OsgiConfigurationOverrideProvider-caconfig-sample
     description="Override\ Example"
-    overrides=["[/content/adaptto-caconfig-aem/en/sub-page/sub-page-override]io.wcm.caconfig.sample.config.ConfigSample\={\"stringParam\":\"override-stringParam\",\"intParam\":999}","[/content/adaptto-caconfig-aem/en/sub-page/sub-page-override]sample/configuration/2/stringParam\=\"override2-stringParam\""]
+    overrides=["[/content/adaptto-caconfig-aem/en/sub-page/sub-page-override]org.adaptto.caconfig.aem.config.ConfigSample\={\"stringParam\":\"override-stringParam\",\"intParam\":999}"]
     enabled=B"true"
 
   # Enable AEM Page peristence strategy
   io.wcm.caconfig.extensions.persistence.impl.PagePersistenceStrategy
     enabled=B"true"
+
+  # Absolute Parent Root Path Strategy
+  io.wcm.caconfig.extensions.contextpath.impl.AbsoluteParentContextPathStrategy-example
+    levels=I["2","3","4"]
+    contextPathRegex="^/content(/.+)$"
+    contextPathBlacklistRegex="^.*/config(/.+)?$"
+    configPathPatterns=["/conf$1"]
 
 
 [configurations runModes=author]
