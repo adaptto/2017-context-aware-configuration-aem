@@ -63,10 +63,10 @@ echo "*** Deploy AEM packages  ***"
 echo ""
 
 cd config-definition
-mvn -B $sling_params -Pdeploy-packages -Dconga.nodeDirectory=target/configuration/development/aem-author conga-aem:package-install
+mvn -B $sling_params -Dconga.nodeDirectory=target/configuration/development/aem-author conga-aem:package-install
 
 if [ "$?" -ne "0" ]; then
-  error_exit "*** Deploying config packages FAILED ***"
+  error_exit "*** Deploying AEM packages FAILED ***"
 fi
 
 cd ../
@@ -80,7 +80,9 @@ error_exit()
   echo ""
   echo "$1" 1>&2
   echo ""
-  read -n1 -r -p "Press any key to continue..." key
+  if [[ $0 == *":\\"* ]]; then
+    read -n1 -r -p "Press ENTER key to continue..."
+  fi
   exit 1
 }
 
@@ -99,4 +101,6 @@ default_build
 echo ""
 echo "*** Build complete ***"
 echo ""
-read -n1 -r -p "Press any key to continue..." key
+if [[ $0 == *":\\"* ]]; then
+  read -n1 -r -p "Press ENTER key to continue..."
+fi
